@@ -7,12 +7,25 @@ is that URL. Images live under `images/<YYYY-MM-DD>/` and are served straight
 from GitHub's CDN:
 
 ```
-https://raw.githubusercontent.com/lotusarise/social-images/main/images/2026-09-22/example.png
+https://raw.githubusercontent.com/lotusarise/social-images/<commit-sha>/images/2026-09-22/example.png
 ```
 
 GitHub serves these with `content-type: image/png` and
 `access-control-allow-origin: *`, which is everything Metricool needs. No web
 server, no Google Drive sharing settings, no expiring links.
+
+### Why the commit SHA and not `main`
+
+`raw.githubusercontent.com` sends `cache-control: max-age=300`. A branch URL
+can therefore serve a stale response for up to five minutes — this was
+observed for real while setting this repo up, with `/main/README.md` still
+returning the old 30-byte placeholder while the git tree already held the
+2178-byte file. Worse, a 404 fetched before an image existed can be cached
+the same way, which would make `publish.sh` time out on an image that
+pushed perfectly well.
+
+A SHA-pinned path has never been requested before and its content can never
+change, so it is immune to both. `publish.sh` emits these automatically.
 
 ## Scripts
 

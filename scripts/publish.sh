@@ -8,12 +8,19 @@
 # confirmed live are printed. Exit code is non-zero if any image fails to
 # become reachable, so the caller can fall back to another host instead of
 # handing a broken link to Metricool.
+#
+# URLs are pinned to the commit SHA, not to the branch. raw.githubusercontent
+# serves with cache-control: max-age=300, so a branch URL can hand back a
+# stale response for up to five minutes - including a cached 404 from before
+# the file existed, which would make this script time out on an image that
+# pushed perfectly well. A SHA path has never been requested before and its
+# content can never change, so neither staleness nor cache-poisoning applies.
 
 set -euo pipefail
 
 REPO_SLUG="lotusarise/social-images"
 BRANCH="main"
-RAW_BASE="https://raw.githubusercontent.com/${REPO_SLUG}/${BRANCH}"
+RAW_BASE=""   # set after the push, from the commit SHA
 VERIFY_TIMEOUT=120   # seconds to wait for a URL to go live
 VERIFY_INTERVAL=3
 
@@ -88,6 +95,11 @@ if ! GIT_TERMINAL_PROMPT=0 git push -q origin "HEAD:${BRANCH}"; then
   exit 3
 fi
 log "pushed to ${REPO_SLUG}@${BRANCH}"
+
+# Pin every URL to the exact commit just pushed (see header note on caching).
+HEAD_SHA="$(git rev-parse HEAD)"
+RAW_BASE="https://raw.githubusercontent.com/${REPO_SLUG}/${HEAD_SHA}"
+log "pinning URLs to ${HEAD_SHA}"
 
 # --- 4. Verify each URL is genuinely live before handing it out -----------
 LIVE_URLS=()
