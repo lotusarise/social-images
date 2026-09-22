@@ -29,17 +29,24 @@ change, so it is immune to both. `publish.sh` emits these automatically.
 
 ## Scripts
 
-| Script                 | What it does                                                            |
-| ---------------------- | ----------------------------------------------------------------------- |
-| `scripts/preflight.sh` | Checks push access **before** the day's work starts. Run this first.     |
-| `scripts/publish.sh`   | Copies images in, commits, pushes, and returns **verified** URLs.        |
-| `scripts/verify.sh`    | Re-checks that given URLs are live images. The last gate before posting. |
+| Script                   | What it does                                                            |
+| ------------------------ | ----------------------------------------------------------------------- |
+| `scripts/preflight.sh`   | Checks push access **before** the day's work starts. Run this first.     |
+| `scripts/pick-content.sh`| Picks a lotusarise.com article to promote, skipping ones already used.   |
+| `scripts/publish.sh`     | Copies images in, commits, pushes, and returns **verified** URLs.        |
+| `scripts/verify.sh`      | Re-checks that given URLs are live images. The last gate before posting. |
+
+Images themselves are produced by the approved design system in `template/`
+— see `template/README.md`. Do not add another renderer beside it: the brand
+rules there (official logo only, fixed palette, globe-and-URL footer) are
+owner-approved and a second renderer will drift from them.
 
 ### Typical use
 
 ```bash
 scripts/preflight.sh || echo "GitHub host unavailable today"
-scripts/publish.sh --json out/carousel-1.png out/carousel-2.png
+cd template && python3 my_slides.py && node render.js out html/*.html && cd ..
+scripts/publish.sh --json template/out/a1.png template/out/a2.png
 ```
 
 `publish.sh` prints only URLs it has confirmed are serving real image bytes,
@@ -57,9 +64,17 @@ been fetched and checked for a `200` plus an `image/*` content type.
 
 ```
 images/<YYYY-MM-DD>/<name>.<ext>   day-stamped image files
-scripts/                           preflight, publish, verify
+scripts/                           preflight, pick-content, publish, verify
+template/                          approved LotusArise design system (see its README)
+state/posted-log.txt               which articles have already been promoted
 docs/RUNBOOK.md                    the daily automation, host fallback order
+docs/DAILY-TASK-PROMPT.md          the prompt to paste into the 6 AM routine
 ```
+
+`template/node_modules/`, `template/out/`, `template/html/` and the
+downloaded `template/assets/logo.png` are gitignored — the logo is fetched
+fresh from the official URL per `template/README.md`, never committed or
+redrawn.
 
 ## Housekeeping
 

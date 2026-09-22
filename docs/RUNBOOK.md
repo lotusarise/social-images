@@ -15,7 +15,24 @@
 1. **Preflight the host.** `scripts/preflight.sh`. If this fails, GitHub is not
    usable from the current session and you should go to the fallback order
    below *before* generating anything.
-2. **Generate the day's images.**
+2. **Generate the day's images** with the approved design system in
+   `template/` — never with an ad-hoc renderer. Write a Python script modelled
+   on `template/example_rare_earths.py`, then:
+
+       cd template && python3 <your_script>.py && node render.js out html/*.html
+
+   `render.js` prints `<png> overflow <px>` per slide and **exits 2 if any
+   slide overflowed**. Treat a non-zero exit as a hard stop: fix the copy and
+   re-render. Never publish a slide that overflowed.
+
+   First-time setup on a machine, per `template/README.md`:
+
+       cd template && npm i && mkdir -p assets html out
+       curl -sSL -o assets/logo.png https://lotusarise.com/wp-content/uploads/brand/lotusarise-ias-logo.png
+
+   Note: `playwright-core` bundles no browser. `render.js` looks for the
+   Linux `/opt/pw-browsers` build first, then falls back to the Google Chrome
+   installed on this Mac. If neither exists, run `npx playwright install`.
 3. **Publish and verify.** `scripts/publish.sh --json <files...>`. Use only the
    URLs it returns. If it exits non-zero, treat the GitHub host as unavailable.
 4. **Schedule the posts.**

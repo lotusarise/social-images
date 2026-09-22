@@ -1,0 +1,12 @@
+# Template build artefacts and dependencies
+template/node_modules/
+template/out/
+template/html/
+
+# Brand logo is downloaded fresh per template/README.md setup, never redrawn
+template/assets/logo.png
+
+__pycache__/
+*.pyc
+
+.DS_Store
