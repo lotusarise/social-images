@@ -6,11 +6,24 @@ The working checkout on the Mac is `/Users/arvind/Social Media Marketing`.
 The folder name contains spaces, so quote it in every shell command. The
 scripts themselves resolve their own repo root, so they work from any path.
 
-The daily routine runs locally on the Mac rather than in claude.ai/code,
-because the cloud environment's proxy blocks Typefully's media upload and
-X/LinkedIn would lose their images there. A local routine only runs while
-the Claude desktop app is open; if it is closed at 6 AM it runs on next
-launch.
+The daily routine is bound to this Mac. A device-bound routine only runs
+while the Claude desktop app is open; if it is closed at the scheduled time
+it runs on next launch.
+
+IMPORTANT (verified 23 Sept 2026): a routine's shell on this Mac is NOT
+macOS. It is an isolated Linux sandbox with the connected folder mounted at
+$HOME/mnt/Social Media Marketing. Consequences:
+
+- `~/.ssh` does not exist there and github.com does not resolve over SSH, so
+  an `git@github.com:` remote can never authenticate. The remote is HTTPS
+  with a fine-grained PAT (Contents: read/write on this repo only) stored in
+  this checkout's `.git/config`. Rotate it before it expires; `.git/config`
+  is local and never pushed.
+- Author identity is not inherited, so it is set repo-locally
+  (`git config user.name/user.email`). Do not remove it.
+- The sandbox reaches the network through a proxy that allow-lists hosts.
+  github.com, raw.githubusercontent.com and api.github.com work. Typefully's
+  media host does not - see below.
 
 ## Accounts in play
 
@@ -18,7 +31,7 @@ launch.
 | -------------------- | --------------------------------------------------- |
 | Metricool brand      | `LotusArise`, blogId `4860368`                       |
 | Metricool timezone   | `Asia/Kolkata`                                       |
-| Metricool networks   | Instagram `lotus_arise`, Facebook, Threads, Pinterest `lotusarise`, Google Business Profile |
+| Metricool networks   | Instagram `lotus_arise`, Facebook, Threads, Pinterest `lotusarise` (board "UPSC Exam", boardId `706431960239283710`), Google Business Profile |
 | Typefully social set | `334144` (`Lotus_Arise_1`)                           |
 | Image host           | this repo, `lotusarise/social-images`                |
 
@@ -53,10 +66,16 @@ launch.
      `publicationDate.timezone: "Asia/Kolkata"`.
      Pinterest also requires `pinterestData.boardId` and `pinTitle`.
      Instagram requires at least one image.
-   - Text-led posts (X, LinkedIn, Bluesky, Threads, Substack) -> Typefully.
+   - Text-led posts (X, LinkedIn, Bluesky, Substack) -> Typefully.
      Typefully has its own media store: `create_media_upload` returns a
      presigned S3 URL, `PUT` the raw bytes with no extra headers, then attach
      the returned `media_id`. Typefully posts do **not** need this repo.
+     BUT (verified 23 Sept 2026) `typefully-user-uploads.s3.amazonaws.com`
+     returns `403 from proxy after CONNECT` in BOTH the cloud environment and
+     this Mac's routine sandbox, so the upload cannot be done from a routine
+     at all. Publish X and LinkedIn with the article link instead and let the
+     link preview supply the picture. The earlier claim that "the upload works
+     normally when the routine runs on the Mac" is wrong.
 5. **Re-verify before the post goes live.** `scripts/verify.sh <urls...>`.
 
 ## Host fallback order
@@ -80,15 +99,25 @@ unverified URL. Report which host failed and the exact error.
 
 - **`git push` rejected / no credentials.** The session has no write access to
   the repo. `preflight.sh` catches this in seconds instead of at posting time.
+  On this Mac that means the PAT in `.git/config` has expired or been revoked:
+  create a new fine-grained token and re-run
+  `git remote set-url origin "https://<TOKEN>@github.com/lotusarise/social-images.git"`.
+
+- **Stale `.git/refs/.../*.lock`.** The sandbox cannot delete files unless the
+  user has granted delete permission for the folder in that session, so a
+  crashed git run can leave a lock behind and the next push logs
+  `cannot lock ref`. Ask for delete permission and `rm` the `.lock` file.
 
 - **Cloud session can clone but not push (seen 23 Sept 2026).** The repo is
   public, so a claude.ai/code session clones it anonymously and renders every
   slide correctly — then the push fails and the images have no public URL, so
   Instagram and Pinterest are dropped while the run otherwise looks healthy.
-  The fix is not an SSH key: keys in `~/.ssh` exist only on the Mac and a
-  cloud session cannot see them. Grant the **Claude GitHub App write access**
-  to `lotusarise/social-images` at github.com/settings/installations, and make
-  sure the routine has that repository selected.
+  The Claude GitHub App already has write access to this repo; the missing
+  piece is that the git proxy only injects a credential for repositories in
+  that session's authorised set, and it says so verbatim:
+  "lotusarise/social-images is not in this session's authorized repository
+  set". A cloud routine therefore needs the repo added as one of its sources
+  when it is created. The Mac routine does not - it uses the PAT above.
 - **URL pushed but 404 for a few seconds.** Expected; `publish.sh` polls for up
   to 120s before giving up.
 - **Google Drive upload truncated.** A partial file uploads "successfully" and

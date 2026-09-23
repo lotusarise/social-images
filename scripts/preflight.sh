@@ -36,7 +36,7 @@ fi
 
 # 3. Is a remote configured?
 if git remote get-url origin >/dev/null 2>&1; then
-  say "git remote" "$(git remote get-url origin)"
+  say "git remote" "$(git remote get-url origin | sed -E 's#//[^@]*@#//***@#')"
 else
   say "git remote" "NOT CONFIGURED"
   status=1

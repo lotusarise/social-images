@@ -1,26 +1,26 @@
 # Daily task — setup and prompt
 
-Create a scheduled task (routine) with:
+The live task is **"LotusArise daily social posts (Mac)"**, scheduled at
+10:00 AM Asia/Kolkata, bound to this Mac, with the folder
+`/Users/arvind/Social Media Marketing` attached and notify-on-completion on.
+Its prompt is maintained in the task itself (Claude → Scheduled tasks), not
+here; this file records how the plumbing works.
 
-- **Schedule:** `0 6 * * *` (6:00 AM, Asia/Kolkata — cron runs in local time)
-- **Title:** LotusArise daily social post (6 AM)
-- **Notify on completion:** on
+**Host access (verified 23 Sept 2026).** The routine's shell is an isolated
+Linux sandbox with the folder mounted — not macOS. It has no `~/.ssh` and no
+SSH egress, so the remote is HTTPS carrying a fine-grained PAT stored in this
+checkout's `.git/config`, and `preflight.sh` reports `push access GRANTED`.
+Rotate the token before it expires; nothing else needs changing.
 
-Paste everything below the line as the task prompt.
+**X and LinkedIn cannot carry an uploaded image.** Typefully's presigned S3
+host is blocked by the proxy in both the cloud and this sandbox
+(`403 from proxy after CONNECT`). Post those two with the article link and let
+the link preview supply the picture.
 
-**If the routine runs in the cloud (claude.ai/code)** — which is where it runs
-today — it must have `lotusarise/social-images` selected as its repository,
-**and the Claude GitHub App must have write access to that repo**
-(github.com/settings/installations → Configure → Repository access).
+**Pinterest is usable.** Board "UPSC Exam" resolves to boardId
+`706431960239283710`.
 
-Read access is not enough and fails in a way that looks like success: the repo
-is public, so a cloud session clones it and renders every slide perfectly,
-then cannot push, so the images have no public URL and Instagram and Pinterest
-are dropped. That is exactly what happened on 23 Sept 2026.
-
-**If the routine runs on the Mac instead**, it uses the SSH key in `~/.ssh`
-and needs no GitHub App. Note that a local routine only runs while the Claude
-desktop app is open; if it is closed at 6 AM the task runs on next launch.
+The older prompt below is kept for reference only.
 
 ---
 
