@@ -122,21 +122,36 @@ Use only the verified urls from Step 4.
 Metricool (Instagram + Facebook) via `createScheduledPost`:
 
 - `blogId: "4860368"`
-- `providers: [{"network":"instagram"},{"network":"facebook"}]`
+- `providers: [{"network":"instagram"},{"network":"facebook"},{"network":"threads"}]`
 - `media: [<verified urls, carousel order>]`
 - `autoPublish: true`, `draft: false`
 - `publicationDate: {dateTime: "<today>T09:30:00", timezone: "Asia/Kolkata"}`
   Optionally call `getBestTimeToPostByNetwork` and use that instead; fall
   back to 09:30 if it returns nothing usable.
-- `instagramData: {"type":"POST"}`, `facebookData: {"type":"POST"}`
+- `instagramData: {"type":"POST"}`, `facebookData: {"type":"POST"}`,
+  `threadsData: {"allowedCountryCodes": []}`
 - Instagram requires at least one image — never send an empty media list.
 
+Threads (`lotus_arise`) is connected to this Metricool brand and must be
+included. It was dropped from an earlier version of this prompt by mistake.
+
 Typefully (X + LinkedIn), `social_set_id` 334144:
+
+X and LinkedIn are **not** connected to Metricool — only Facebook, Instagram,
+Threads, Pinterest and Google Business are — so Typefully is the only route to
+them. There is no Metricool fallback for these two.
 
 - Upload the 1200x675 card with `create_media_upload`, PUT the raw bytes to
   the presigned URL with no extra headers (`curl -T`), then attach the
   returned `media_id`. Typefully cannot read Metricool's media or vice versa.
 - Schedule it to publish this morning, not saved as a draft.
+
+**Known limitation in cloud runs:** `typefully-user-uploads.s3.amazonaws.com`
+is blocked by the network proxy at the CONNECT stage in the claude.ai/code
+cloud environment, so the PUT fails and X/LinkedIn land text-only there. This
+is independent of GitHub access — fixing repo permissions does not fix it.
+The upload works normally when the routine runs on the Mac. If the PUT fails,
+say so explicitly in the report; do not describe the post as having an image.
 
 Pinterest is deliberately excluded: Metricool needs a numeric board ID and
 the board has never been confirmed, so including it would fail the whole
