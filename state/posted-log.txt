@@ -7,3 +7,15 @@ https://lotusarise.com/biosphere-reserves-in-india-upsc/
 https://lotusarise.com/watershed-management-upsc/
 # MANUAL TEST RUN fired ~22:15 IST 2026-09-23 (image end-to-end check); window rule waived for this run only
 2026-09-23 | 23:00-23:20 | instagram,facebook,threads,pinterest,x,linkedin | current-affairs | WMO State of Global Water Resources 2025: driest river discharge in 35 yrs, 36% of basins below normal, 408 Gt glacier loss, Ganges-Indus headwaters below normal 2021-25 | https://wmo.int/news/media-centre/wmo-recent-water-trends-have-serious-future-implications ; https://wmo.int/resources/publication-series/state-of-global-water-resources/2025 ; https://www.insightsonindia.com/2026/09/21/state-of-global-water-resources-2025-report/
+# BACKFILL: posts from the 06:13 IST run on 2026-09-23, discovered via Metricool at 23:35 and
+# NOT recorded here at the time. Future runs must check recent Metricool posts, not just this file.
+2026-09-23 | 09:00 | threads | current-affairs | FCRA (Amendment) Bill 2026 - deemed cessation, Designated Authority, Consolidated Fund | published
+2026-09-23 | 10:00 | facebook | current-affairs | FCRA (Amendment) Bill 2026 - asset vesting, Art 300A, Noel Harper (2022) | published
+2026-09-23 | 12:30 | facebook | prelims-mcq | Delimitation MCQ - 42nd/84th/87th Amendments, Art 329(a) | published
+2026-09-23 | 13:30 | threads | prelims-mcq | Delimitation MCQ - 42nd vs 87th Amendment | published
+2026-09-23 | 16:30 | facebook | mains-angle | Delimitation after 2026 - democratic equality vs federal equity, Art 82/170/329(a), Inter-State Council | published
+2026-09-23 | 19:30 | threads | mains-angle | Delimitation - MP:population ratios, federal equity | published
+# NOTE: because of the above, the 2026-09-24 10:00 and 13:00 Facebook + Threads posts were rewritten
+# at 23:38 on 2026-09-23 to a non-overlapping angle (131st Amdt Bill defeat, Art 368 arithmetic,
+# 106th Amdt linkage, Census 2027 reference dates). Instagram/Pinterest/X/LinkedIn were left as built:
+# the 06:13 run posted only to Facebook and Threads, so those four networks carry no duplication.
