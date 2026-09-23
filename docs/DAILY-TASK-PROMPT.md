@@ -8,16 +8,30 @@ Create a scheduled task (routine) with:
 
 Paste everything below the line as the task prompt.
 
-Scheduled tasks only run while the Claude desktop app is open. If the app is
-closed at 6 AM, the task runs on next launch.
+**If the routine runs in the cloud (claude.ai/code)** — which is where it runs
+today — it must have `lotusarise/social-images` selected as its repository,
+**and the Claude GitHub App must have write access to that repo**
+(github.com/settings/installations → Configure → Repository access).
+
+Read access is not enough and fails in a way that looks like success: the repo
+is public, so a cloud session clones it and renders every slide perfectly,
+then cannot push, so the images have no public URL and Instagram and Pinterest
+are dropped. That is exactly what happened on 23 Sept 2026.
+
+**If the routine runs on the Mac instead**, it uses the SSH key in `~/.ssh`
+and needs no GitHub App. Note that a local routine only runs while the Claude
+desktop app is open; if it is closed at 6 AM the task runs on next launch.
 
 ---
 
 Publish the LotusArise daily social post promoting an article from lotusarise.com.
 
-Work in the git repo at /Users/arvind/social-images. Read `docs/RUNBOOK.md`
-and `template/README.md` before doing anything — `template/README.md` is the
-owner-approved brand spec and its rules are not negotiable.
+Work in this session's checkout of `lotusarise/social-images`. Every command
+below is relative to the repo root, so it works whether that checkout is
+`~/social-images` on the Mac or a cloud workspace — never hardcode a path.
+Read `docs/RUNBOOK.md` and `template/README.md` before doing anything;
+`template/README.md` is the owner-approved brand spec and its rules are not
+negotiable.
 
 IMPORTANT CONTEXT: posts go out auto-published to live public accounts. The
 user chose this over hold-for-review. The verification steps below are the
@@ -26,7 +40,7 @@ you have not verified, and never publish a slide that overflowed.
 
 ## Step 1 — Sync and preflight
 
-    cd /Users/arvind/social-images
+    cd "$(git rev-parse --show-toplevel)"
     git pull --rebase
     ./scripts/preflight.sh
 
@@ -67,7 +81,7 @@ Inline `**bold**` renders navy bold and `==highlight==` renders orange bold.
 
 Then render:
 
-    cd /Users/arvind/social-images/template
+    cd "$(git rev-parse --show-toplevel)/template"
     python3 daily.py && node render.js out html/*.html
 
 `render.js` prints `<png> overflow <px>` per slide and **exits 2 if any slide
@@ -77,7 +91,7 @@ with an overflowing slide.
 
 ## Step 4 — Host the images and get VERIFIED urls
 
-    cd /Users/arvind/social-images
+    cd "$(git rev-parse --show-toplevel)"
     ./scripts/publish.sh --json template/out/<slide>.png [more...]
 
 Pass the carousel slides in reading order. This commits, pushes, then polls
@@ -133,15 +147,25 @@ a 1000x1500 pin (`W=1000, H=1500`) the moment a board name is supplied.
 
 Do not post an image you could not verify, or a slide that overflowed.
 
-- Skip Instagram entirely (it cannot post without an image).
-- Publish text-only to X and LinkedIn via Typefully, and to Facebook via
-  Metricool with an empty media list.
+But do NOT drop images everywhere just because GitHub is unavailable.
+**Typefully hosts its own media and does not depend on this repo at all**, so
+X and LinkedIn keep their image even when hosting has failed:
+
+- **X + LinkedIn — still with the image.** Upload the rendered 1200x675 card
+  through Typefully's `create_media_upload` exactly as in Step 6. This path
+  never touches GitHub. Only fall back to text-only if Step 3 failed and
+  there is no rendered card at all.
+- **Instagram — skip entirely.** It cannot post without an image, and
+  Metricool can only take a public URL, which is precisely what failed.
+- **Facebook — text-only** via Metricool with an empty media list.
 - State clearly which step failed and the exact error.
+
+A GitHub outage should therefore cost you Instagram, not the whole day.
 
 ## Step 8 — Record and report
 
     ./scripts/pick-content.sh --mark "<article url>"
-    cd /Users/arvind/social-images
+    cd "$(git rev-parse --show-toplevel)"
     git add state/posted-log.txt && git commit -q -m "state: posted $(date +%F)" && git push -q
 
 Report briefly:

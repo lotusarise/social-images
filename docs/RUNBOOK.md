@@ -68,6 +68,15 @@ unverified URL. Report which host failed and the exact error.
 
 - **`git push` rejected / no credentials.** The session has no write access to
   the repo. `preflight.sh` catches this in seconds instead of at posting time.
+
+- **Cloud session can clone but not push (seen 23 Sept 2026).** The repo is
+  public, so a claude.ai/code session clones it anonymously and renders every
+  slide correctly — then the push fails and the images have no public URL, so
+  Instagram and Pinterest are dropped while the run otherwise looks healthy.
+  The fix is not an SSH key: keys in `~/.ssh` exist only on the Mac and a
+  cloud session cannot see them. Grant the **Claude GitHub App write access**
+  to `lotusarise/social-images` at github.com/settings/installations, and make
+  sure the routine has that repository selected.
 - **URL pushed but 404 for a few seconds.** Expected; `publish.sh` polls for up
   to 120s before giving up.
 - **Google Drive upload truncated.** A partial file uploads "successfully" and
