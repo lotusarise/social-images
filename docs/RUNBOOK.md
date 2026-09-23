@@ -118,6 +118,19 @@ unverified URL. Report which host failed and the exact error.
   "lotusarise/social-images is not in this session's authorized repository
   set". A cloud routine therefore needs the repo added as one of its sources
   when it is created. The Mac routine does not - it uses the PAT above.
+- **No browser in the Mac routine sandbox (seen 23 Sept 2026).** `render.js`
+  finds neither `/opt/pw-browsers` nor a macOS Chrome, because the routine
+  shell is a Linux sandbox with no browser installed, and `npx playwright
+  install` fails: `cdn.playwright.dev` returns
+  `403 Connection blocked by network allowlist`. Workaround used: stage
+  `la_design.py`, the day's script, `render.js`, `package.json` and
+  `assets/logo.png` into the cloud container, `npm i` there (the npm registry
+  is allowed), and run the SAME `daily.py` + `render.js` against the
+  container's `/opt/pw-browsers/chromium-*/chrome-linux/chrome`. Then commit
+  the PNGs back to `template/out/` and run `publish.sh` on the Mac as usual.
+  The HTML embeds fonts by absolute path, so regenerate it in the container -
+  copying the Mac's HTML across will lose the fonts.
+
 - **URL pushed but 404 for a few seconds.** Expected; `publish.sh` polls for up
   to 120s before giving up.
 - **Google Drive upload truncated.** A partial file uploads "successfully" and
