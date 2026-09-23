@@ -1,5 +1,17 @@
 # Daily social automation runbook
 
+## Where this runs
+
+The working checkout on the Mac is `/Users/arvind/Social Media Marketing`.
+The folder name contains spaces, so quote it in every shell command. The
+scripts themselves resolve their own repo root, so they work from any path.
+
+The daily routine runs locally on the Mac rather than in claude.ai/code,
+because the cloud environment's proxy blocks Typefully's media upload and
+X/LinkedIn would lose their images there. A local routine only runs while
+the Claude desktop app is open; if it is closed at 6 AM it runs on next
+launch.
+
 ## Accounts in play
 
 | Thing                | Value                                               |

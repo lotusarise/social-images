@@ -28,7 +28,9 @@ Publish the LotusArise daily social post promoting an article from lotusarise.co
 
 Work in this session's checkout of `lotusarise/social-images`. Every command
 below is relative to the repo root, so it works whether that checkout is
-`~/social-images` on the Mac or a cloud workspace — never hardcode a path.
+`/Users/arvind/Social Media Marketing` on the Mac (note the spaces — always
+quote that path in shell commands) or a cloud workspace. Never hardcode a
+path in the steps themselves.
 Read `docs/RUNBOOK.md` and `template/README.md` before doing anything;
 `template/README.md` is the owner-approved brand spec and its rules are not
 negotiable.
