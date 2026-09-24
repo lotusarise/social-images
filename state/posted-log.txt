@@ -19,3 +19,27 @@ https://lotusarise.com/watershed-management-upsc/
 # at 23:38 on 2026-09-23 to a non-overlapping angle (131st Amdt Bill defeat, Art 368 arithmetic,
 # 106th Amdt linkage, Census 2027 reference dates). Instagram/Pinterest/X/LinkedIn were left as built:
 # the 06:13 run posted only to Facebook and Threads, so those four networks carry no duplication.
+# run 2026-09-24 10:05 IST. NO NEW CONTENT BUILT. Two blockers found; see below.
+# 1) METRICOOL ACCOUNT LIMIT REACHED. Today's 10:00 IST batch (scheduled by the
+#    2026-09-23 22:17 run) came back status=ERROR on ALL four networks with
+#    "You have reached your Metricool account limit." -> instagram, facebook,
+#    threads, pinterest published NOTHING at 10:00. The 13:00 and 20:00 batches
+#    were still PENDING at the time of this run and are expected to fail the same
+#    way: the limit bites at publish time, not at schedule time (a fresh
+#    createScheduledPost was accepted normally and returned PENDING).
+#    Owner action needed: upgrade the Metricool plan, or wait for the monthly reset.
+# 2) TYPEFULLY QUOTA NEARLY EXHAUSTED: used 8 / remaining 2, resets 2026-10-01.
+#    X + LinkedIn ALREADY had three posts for today from the 2026-09-23 run
+#    (10:00 published, 13:00 and 20:00 scheduled), so the last 2 slots were
+#    deliberately NOT spent today - they are the only guaranteed publishes left
+#    for 25-30 Sept while Metricool is capped. No Typefully drafts created.
+# No research/image build was done: today's three-per-platform slots were already
+# filled by the 2026-09-23 run (Delimitation + Agasthyamala), so new posts would
+# have duplicated existing content and could not have published anyway.
+# RESCUE: the four ERRORed 10:00 posts were re-queued at 16:00 IST with re-verified
+# SHA-pinned URLs from images/2026-09-23/ (verify.sh exit 0). They will go out only
+# if the Metricool limit is lifted. No new topics consumed.
+2026-09-24 | 16:00 | facebook | current-affairs (re-queue of failed 10:00) | Delimitation: Constitution (131st Amendment) Bill 2026 negatived 17 Apr 2026; Art 368 majorities; 106th Amdt linkage; Census 2027 dates | image fb_d.png @154ddab
+2026-09-24 | 16:00 | instagram | current-affairs (re-queue of failed 10:00) | Delimitation & federal balance, 6-slide carousel a1-a6 | images a1-a6 @8da83f6
+2026-09-24 | 16:00 | pinterest | current-affairs (re-queue of failed 10:00) | Delimitation: 8 constitutional facts (board "UPSC Exam") | image pin_a.png @8da83f6
+2026-09-24 | 16:00 | threads | current-affairs (re-queue of failed 10:00) | 131st Amendment Bill negatived - Art 368 two-thirds arithmetic | image fb_d.png @154ddab
