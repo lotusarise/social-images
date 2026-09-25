@@ -1,163 +1,152 @@
 import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from la_design import *
-HERE = os.path.dirname(os.path.abspath(__file__))
-D = '24 September 2026'
+D = '25 September 2026'
+HTML = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html')
 S = {}
 
-# ============================ SET A - DELIMITATION ============================
+# ============ POST 1 : CURRENT AFFAIRS CAROUSEL (a1-a6) ============
 S['a1'] = page(slide(f'''{top(date=D)}
-<div class="tagrow"><span class="tag">POLITY  |  GS-2</span><span class="line"></span></div>
-{headline("Delimitation and the", "federal balance")}
+<div class="tagrow"><span class="tag">INTERNATIONAL RELATIONS  |  GS-2</span><span class="line"></span></div>
+{headline("A new security order", "for the Arctic")}
 <div class="rule"></div>
-<div class="lead">With <b>Census 2027</b> under way and the <b class="hl">Constitution (131st Amendment) Bill</b> defeated in April, how India reallocates Lok Sabha seats is wide open again.</div>''',
- hero("landmark", ["users", "map", "scale", "vote"])) + f'''<div class="swipe">Swipe {icon("arrow-right", 30, "#D17502", 3)}</div>''', page_no='1/6')
+<div class="lead">On <b>22 September 2026</b> the <b>US, Denmark and Greenland</b> signed a pact rewriting the <b class="hl">1951 Defense of Greenland Agreement</b>.</div>''',
+  hero("snowflake", ["ship", "plane", "radar", "shield"])) +
+  f'''<div class="swipe">Swipe {icon("arrow-right", 30, "#D17502", 3)}</div>''', page_no='1/6')
 
-S['a2'] = page(slide(mini_top("WHY IN NEWS") + h2("Why the question is", "live again"),
-  info("triangle-alert", "The April vote", "The **Constitution (131st Amendment) Bill, 2026** was negatived in Lok Sabha on **17 April 2026** — 298 for, 230 against of 528 voting.", True)
-  + info("calendar", "Census 2027 is running", "Phase I houselisting ran **1 April to 30 September 2026**. Population enumeration follows in **February 2027**.")
-  + info("scale", "What failed, and why", "A constitutional amendment needs **two-thirds of those present and voting** under Article 368. 298 of 528 was well short.")), page_no='2/6')
+S['a2'] = page(slide(mini_top("WHY IN NEWS") + h2("What exactly", "was signed"),
+  info("signature", "The signing", "Done at **New York** on 22 September 2026, on the sidelines of the **81st UN General Assembly**.")
+  + info("file-text", "What it amends", "The **Agreement of 27 April 1951** on the defense of Greenland, as amended by the ==2004 Igaliku Agreement==.")
+  + info("landmark", "Not yet in force", "It takes effect only after **parliamentary procedures** in Denmark and Greenland are completed.", True)), page_no='2/6')
 
-S['a3'] = page(slide(mini_top("THE CONSTITUTIONAL BASIS") + h2("What the Constitution", "actually says"),
-  cards([("landmark", "Article 81", "Lok Sabha composition; present ceiling **550**"),
-         ("scale", "Article 82", "Readjustment after **every census**"),
-         ("building-2", "Article 170", "The same, for **State Assemblies**")])
-  + info("gavel", "Article 329(a)", "A delimitation order **cannot be questioned in any court**. Parliament may accept it, but not modify it.", True)
-  + info("users", "Articles 330 & 332", "**SC and ST reserved seats** are re-fixed at every delimitation exercise.")), page_no='3/6')
+S['a3'] = page(slide(mini_top("THE CORE PROVISIONS") + h2("What the agreement", "actually allows"),
+  cards([("radar", "Pituffik", "Modernise and expand the only active US base"),
+         ("map-pin", "Narsarsuaq", "New defence area in the south"),
+         ("anchor", "Mestersvig", "New defence area on the east coast")])
+  + bullets_box("plane", "Access rights", ["US aircraft may **fly over and land in any territory**, including territorial waters",
+                                            "US public vessels gain **undersea access**"], True)), page_no='3/6')
 
-S['a4'] = page(slide(mini_top("THE LONG FREEZE") + h2("Why seats still follow", "the 1971 Census"),
-  chain(["1971 Census", "42nd Amdt", "84th Amdt", "87th Amdt"])
-  + stats([("1971", "The census that still fixes each state's **share** of Lok Sabha seats", True),
-           ("42nd, 1976", "Froze inter-state allocation until after **2000**"),
-           ("84th, 2001", "Freeze extended to the **first census after 2026**"),
-           ("87th, 2003", "Within-state redrawing moved to the **2001 census**"),
-           ("543 / 550", "Elected members against the **Article 81 ceiling**")])), page_no='4/6')
+S['a4'] = page(slide(mini_top("THE STRATEGIC LOCK") + h2("The clauses that", "matter most"),
+  info("ban", "No non-NATO forces", "**No non-NATO state** may build military installations or keep a persistent military presence.", True)
+  + info("lock", "Investment screening", "Non-NATO, non-EU investors barred from control over ==critical infrastructure and resource extraction==.")
+  + info("flag", "If Greenland goes independent", "It must **remain in NATO** and assume every obligation. The pact has **no end date**.")), page_no='4/6')
 
-S['a5'] = page(slide(mini_top("THE TWO ARGUMENTS") + h2("Democratic equality vs", "federal equity"),
-  info("users", "The representation case", "An MP in Uttar Pradesh or Bihar speaks for roughly **2.5 to 3 million** people; one in Tamil Nadu or Kerala for about **1.5 to 1.8 million**.")
-  + info("shield", "The federal case", "States that brought fertility down early fear losing weight in Parliament for doing what national policy asked of them.", True)
-  + stats([("~44 seats", "Roughly **8% of the House** is mis-allocated on one widely cited estimate", True)])), page_no='5/6')
+S['a5'] = page(slide(mini_top("WHY GREENLAND") + h2("Why this island,", "and why now"),
+  stats([("2,166,086 km²", "World's **largest island**; about ==80%== under ice", True),
+         ("~56,500", "Population; capital **Nuuk**"),
+         ("GIUK gap", "Greenland–Iceland–UK **submarine chokepoint**"),
+         ("Pituffik", "US **missile early-warning** and space surveillance"),
+         ("Article 21", "Self-Government Act **no. 473 of 2009** sets the independence route")])), page_no='5/6')
 
-S['a6'] = page(slide(mini_top("WAY FORWARD", logo=True) + h2("What could break", "the deadlock"),
-  bullets_box("lightbulb", "Options on the table", [
-      "**Expand the House** with a floor, so no state loses seats",
-      "**Degressive proportionality**, as in the EU Parliament",
-      "Make the **Rajya Sabha** a real federal chamber"], True)
-  + info("users-round", "Linked issue", "The **106th Amendment, 2023** ties women's reservation to the delimitation that follows the census.")
-  + '<div class="mq">Q. Can India reconcile democratic equality with federal equity in delimitation? Discuss. <span style="color:#D17502">(15 marks)</span></div>'
-  + '<div class="chips"><span class="chip">GS-2 Polity</span><span class="chip">PSIR Optional</span><span class="chip">Prelims</span></div>'), page_no='6/6')
+S['a6'] = page(slide(mini_top("PRELIMS POINTERS", logo=True) + h2("Facts to", "remember"),
+  flash([("Arctic Council", "**Ottawa Declaration, 19 Sept 1996**; a forum, not a treaty body"),
+         ("8 members", "Canada, Denmark, Finland, Iceland, Norway, Russia, Sweden, USA"),
+         ("Military security", "**Expressly outside** the Council's mandate"),
+         ("India", "**Observer since 2013**, Kiruna Ministerial"),
+         ("Svalbard Treaty", "Paris, **9 February 1920**; India an original signatory"),
+         ("Himadri", "India's Arctic station, **Ny-Ålesund, 1 July 2008**")]), fill=True), page_no='6/6')
 
-# ============================== SET B - MCQ ==================================
-S['b1'] = page(slide(f'''{top(kicker_a='PRELIMS', kicker_b='PRACTICE', date=D)}
-<div class="tagrow"><span class="tag">POLITY  |  GS-2</span><span class="line"></span></div>
-{headline("Statement-based MCQ:", "Delimitation")}
-<div class="rule"></div>
-<div class="lead">Four statements. Two traps. One of them turns on a bill that <b class="hl">did not pass</b> this April — exactly the kind of detail UPSC likes.</div>''',
- hero("vote", ["landmark", "scale", "gavel", "users"])) + f'''<div class="swipe">Swipe {icon("arrow-right", 30, "#D17502", 3)}</div>''', page_no='1/4')
-
-Q = ["Under Article 82, the allocation of Lok Sabha seats among the States is to be readjusted upon the completion of each census.",
-     "The 84th Amendment extended the freeze on inter-State allocation of seats until the first census taken after 2026.",
-     "An order of the Delimitation Commission may be challenged in a High Court but not in the Supreme Court.",
-     "The maximum strength of the Lok Sabha under Article 81 was raised from 550 to 850 in 2026."]
-S['b2'] = page(slide(mini_top("CONSIDER THE FOLLOWING STATEMENTS", logo=True) + h2("Delimitation in", "India"),
+# ============ POST 2 : PRELIMS MCQ (b1-b2) ============
+Q = ["The Arctic Council was established by the Ottawa Declaration of 1996 and its mandate excludes military security.",
+     "India has been an Observer in the Arctic Council since 2013.",
+     "India became a party to the Svalbard Treaty only after releasing its Arctic Policy in 2022.",
+     "Under the 2026 US–Denmark–Greenland agreement, an independent Greenland must remain in NATO."]
+S['b1'] = page(slide(mini_top("PRELIMS PRACTICE  |  GS-2", logo=True) + h2("The Arctic", "& India"),
   mcq_q(Q, "How many of the above statements are correct?", ["Only one", "Only two", "Only three", "All four"])),
-  cta='Answer on the next slide')
+  cta='Share your answer in comments')
 
-S['b3'] = page(slide(mini_top("ANSWER & EXPLANATION", logo=True)
-  + '<div class="ans"><div class="a">(B)</div><div class="t">Only two are correct:<br>statements 1 and 2</div></div>',
-  verdicts([(True, "1. Correct", "Article 82: on completion of **each census**, seats are readjusted by an authority Parliament lays down in a **Delimitation Act**."),
-            (True, "2. Correct", "The **84th Amendment, 2001** pushed the freeze to the **first census after 2026**, keeping the 1971 shares."),
-            (False, "3. Incorrect", "**Article 329(a)** bars **any court** from questioning a delimitation order — High Court and Supreme Court alike."),
-            (False, "4. Incorrect", "The **131st Amendment Bill** proposed 850, but it was **negatived on 17 April 2026**. The ceiling is still **550**.")])), page_no='3/4')
+S['b2'] = page(slide(mini_top("ANSWER & EXPLANATION", logo=True) +
+  '<div class="ans"><div class="a">(C)</div><div class="t">Only three are correct:<br>statements 1, 2 and 4</div></div>',
+  verdicts([(True, "1. Correct", "Signed **19 September 1996**. The Council is a forum, and military security sits **outside** its mandate."),
+            (True, "2. Correct", "India became an Observer at the **Kiruna Ministerial, 2013**."),
+            (False, "3. Incorrect", "India signed the Svalbard Treaty in **1920** — a century before the 2022 Arctic Policy."),
+            (True, "4. Correct", "The agreement requires an independent Greenland to **stay in NATO** and assume all obligations.")])), page_no='2/2')
 
-S['b4'] = page(slide(mini_top("PRELIMS POINTERS", logo=True) + h2("Delimitation:", "facts to remember"),
-  flash([("Article 82", "Readjustment after each census"),
-         ("Article 329(a)", "Orders are beyond judicial review"),
-         ("Four commissions", "Under the Acts of **1952, 1962, 1972, 2002**"),
-         ("Plus 2020", "A separate commission for **J&K**"),
-         ("Composition", "Retired SC judge (Chair), **CEC**, State EC"),
-         ("106th Amdt, 2023", "Women's quota follows delimitation")]), fill=True), page_no='4/4')
-
-# ========================= SET C - AGASTHYAMALA ==============================
-S['c1'] = page(slide(f'''{top(date=D)}
-<div class="tagrow"><span class="tag">ENVIRONMENT  |  GS-3</span><span class="line"></span></div>
-{headline("3,261 flowering plants:", "inside Agasthyamala")}
+# ============ POST 3 : MAINS ANGLE (c1-c5) ============
+S['c1'] = page(slide(f'''{top(kicker_a='MAINS', kicker_b='ANGLE', date=D)}
+<div class="tagrow"><span class="tag">GS-2  |  INTERNATIONAL RELATIONS</span><span class="line"></span></div>
+{headline("India and the", "militarised Arctic")}
 <div class="rule"></div>
-<div class="lead">A new <b>JNTBGRI</b> checklist maps the flora of the Agasthyamala Biosphere Reserve — <b class="hl">31.2%</b> of its taxa grow nowhere outside India.</div>''',
- hero("flower-2", ["mountain", "trees", "bird", "leaf"])) + f'''<div class="swipe">Swipe {icon("arrow-right", 30, "#D17502", 3)}</div>''', page_no='1/5')
+<div class="lead">The Arctic's reputation as a zone of <b>exceptional cooperation</b> is thinning. India's stake there is <b class="hl">older than most people assume</b>.</div>''',
+  hero("globe", ["microscope", "ship", "thermometer", "scale"])) +
+  f'''<div class="swipe">Swipe {icon("arrow-right", 30, "#D17502", 3)}</div>''', page_no='1/5')
 
-S['c2'] = page(slide(mini_top("WHERE IT IS") + h2("A reserve across", "two states"),
-  info("map", "Location", "Southern **Western Ghats**, spanning **Kerala** (Thiruvananthapuram, Kollam, Pathanamthitta) and **Tamil Nadu** (Tirunelveli, Kanniyakumari).")
-  + stats([("3,500 sq km", "Total area of the biosphere reserve", True),
-           ("1,868 m", "Agasthyarkoodam, the highest peak"),
-           ("2016", "Joined UNESCO's **World Network**")])
-  + info("trees", "What it contains", "Four protected areas: **Neyyar**, **Peppara** and **Shendurney** sanctuaries, and the **Kalakad-Mundanthurai Tiger Reserve**.", True)), page_no='2/5')
+S['c2'] = page(slide(mini_top("THE FOOTPRINT") + h2("India in the Arctic,", "by the dates"),
+  stats([("1920", "India signed the **Svalbard Treaty** at Paris", True),
+         ("2013", "**Observer**, Arctic Council"),
+         ("1 July 2008", "**Himadri** station, Ny-Ålesund"),
+         ("17 Mar 2022", "India's **Arctic Policy**, six pillars"),
+         ("NCPOR, Goa", "Nodal body, **Ministry of Earth Sciences**")])), page_no='2/5')
 
-S['c3'] = page(slide(mini_top("THE NEW CHECKLIST") + h2("What the survey", "recorded"),
-  stats([("3,261", "Flowering plant species, plus **26 subspecies** and **28 varieties**", True),
-         ("31.2%", "Of the taxa are **endemic to India**"),
-         ("245", "**Steno-endemic** species, found only here"),
-         ("347", "Taxa **shared with Sri Lanka**"),
-         ("337", "Bird species recorded in the reserve")])
-  + info("sprout", "Why botanists care", "The reserve holds **wild progenitors** of pepper, cardamom and nutmeg — a living gene bank for India's spice crops.")), page_no='3/5')
+S['c3'] = page(slide(mini_top("WHY IT MATTERS") + h2("Why a tropical country", "watches the Arctic"),
+  info("thermometer", "Climate", "Arctic warming is tied to shifts in the **monsoon** and the Himalaya — the ==Third Pole== link.")
+  + info("ship", "Connectivity", "Shorter northern shipping routes and the **Chennai–Vladivostok** Eastern Maritime Corridor.")
+  + info("lock", "Securitisation", "The 2026 pact screens **non-NATO, non-EU investment** out of resources and infrastructure.", True)), page_no='3/5')
 
-S['c4'] = page(slide(mini_top("THE HUMAN STORY") + h2("The Kani model:", "biodiversity that pays"),
-  info("users", "The Kani people", "Around **30,000** Kani (Kanikkar) live in and around the reserve, among the oldest forest-dwelling communities of the southern Ghats.")
-  + info("leaf", "Arogyapacha", "Kani knowledge of **Trichopus zeylanicus** led to the anti-fatigue drug **Jeevani**, licensed in 1995 for a fee plus a **2% royalty**.", True)
-  + info("handshake", "Why UPSC cares", "TBGRI shared **50%** of fee and royalty with the community — India's textbook **Access and Benefit-Sharing** case.")), page_no='4/5')
+S['c4'] = page(slide(mini_top("CHALLENGES & WAY FORWARD") + h2("The balance", "India must strike"),
+  bullets_box("triangle-alert", "Challenges", ["Observers have **no vote** in the Arctic Council",
+                                                "Arctic security is being settled **outside** the Council",
+                                                "Russia ties versus Western partnerships"])
+  + bullets_box("lightbulb", "Way forward", ["Deepen **science diplomacy** through Himadri and NCPOR",
+                                              "Build **polar research capacity**",
+                                              "Press for a stronger voice for **Observers**"], True)), page_no='4/5')
 
-S['c5'] = page(slide(mini_top("PRELIMS POINTERS", logo=True) + h2("Agasthyamala:", "facts to remember"),
-  flash([("Biosphere reserve", "National **2001**; UNESCO **2016**"),
-         ("Western Ghats", "One of India's **4 biodiversity hotspots**"),
-         ("Agasthyarkoodam", "**1,868 m**, highest peak of the reserve"),
-         ("Kalakad-Mundanthurai", "Tamil Nadu's **first** tiger reserve"),
-         ("Arogyapacha", "**Trichopus zeylanicus**; drug Jeevani"),
-         ("ABS law", "**Biological Diversity Act, 2002**; Nagoya Protocol")]), fill=True), page_no='5/5')
+S['c5'] = page(slide(mini_top("MAINS PRACTICE", logo=True) + h2("Answer", "this"),
+  '<div class="mq">Q. "The Arctic is no longer a zone of exceptional cooperation." Examine the implications of Arctic militarisation for India\'s scientific, economic and strategic interests. <span style="color:#D17502">(15 marks)</span></div>'
+  + bullets_box("scale", "Structure it like this", ["Intro: **Arctic exceptionalism** and why it is fading",
+                                                     "Body 1: India's **legal and scientific** stake",
+                                                     "Body 2: **Economic** stake — routes, minerals",
+                                                     "Body 3: The **strategic** squeeze on non-Arctic states",
+                                                     "Conclusion: science diplomacy + **multi-alignment**"], True)
+  + '<div class="chips"><span class="chip">GS-2 IR</span><span class="chip">GS-1 Geography</span><span class="chip">PSIR Optional</span></div>'), page_no='5/5')
 
 for k, v in S.items():
-    open(os.path.join(HERE, 'html', f'{k}.html'), 'w').write(v)
+    open(os.path.join(HTML, f'{k}.html'), 'w').write(v)
 
-# ============================ PINTEREST PINS =================================
+# ============ PINTEREST PINS (1000x1500) ============
 P = {}
 P['pin_a'] = page(slide(top(date=D) + '<div class="tagrow"><span class="tag">PRELIMS + MAINS  |  GS-2</span><span class="line"></span></div>'
-  + headline("Delimitation in India:", "8 facts for UPSC"),
-  flash([("Article 82", "Readjust seats after **each census**"),
-         ("Article 329(a)", "Orders beyond **judicial review**"),
-         ("42nd Amdt, 1976", "Froze inter-state shares on **1971**"),
-         ("84th Amdt, 2001", "Freeze till **first census after 2026**"),
-         ("87th Amdt, 2003", "Within-state redraw on **2001 census**"),
-         ("Article 81", "Ceiling **550**; 543 elected today"),
-         ("131st Amdt Bill", "Proposed 850 - **negatived** 17 Apr 2026"),
-         ("106th Amdt, 2023", "Women's quota **after** delimitation")]), fill=True), W=1000, H=1500, h1=72)
+  + headline("The Arctic pact:", "8 facts for UPSC"),
+  flash([("22 Sept 2026", "US–Denmark–Greenland pact signed"),
+         ("Amends", "1951 Defense of Greenland Agreement"),
+         ("Pituffik", "Modernised and expanded"),
+         ("Two new areas", "Narsarsuaq and Mestersvig"),
+         ("Non-NATO forces", "Bases and persistent presence barred"),
+         ("If independent", "Greenland stays in NATO"),
+         ("Arctic Council", "Ottawa Declaration, 1996"),
+         ("India", "Observer 2013; Svalbard 1920")]), fill=True), W=1000, H=1500, h1=72)
 
-Q_PIN = ["Article 82 requires readjustment of Lok Sabha seats among States after each census.",
-         "The 84th Amendment extended the seat freeze to the first census after 2026.",
-         "A Delimitation Commission order can be challenged in a High Court.",
-         "The Article 81 ceiling on Lok Sabha strength was raised to 850 in 2026."]
-P['pin_b'] = page(slide(top(kicker_a='PRELIMS', kicker_b='PRACTICE', date=D)
-  + headline("Delimitation MCQ:", "can you get it?"),
-  mcq_q(Q_PIN, "How many of the above are correct?", ["Only one", "Only two", "Only three", "All four"])), W=1000, H=1500, h1=68)
+P['pin_b'] = page(slide(top(date=D) + '<div class="tagrow"><span class="tag">PRELIMS PRACTICE  |  GS-2</span><span class="line"></span></div>'
+  + headline("Arctic & India:", "MCQ pointers"),
+  flash([("Arctic Council", "A forum, not a treaty-based organisation"),
+         ("Founded", "Ottawa Declaration, 19 September 1996"),
+         ("Members", "8 Arctic states; 6 Permanent Participants"),
+         ("Mandate", "Military security expressly excluded"),
+         ("India", "Observer since the Kiruna Ministerial, 2013"),
+         ("Svalbard Treaty", "Paris, 9 February 1920"),
+         ("Himadri", "Ny-Ålesund, inaugurated 1 July 2008"),
+         ("Arctic Policy", "Released 17 March 2022")]), fill=True), W=1000, H=1500, h1=72)
 
-P['pin_c'] = page(slide(top(date=D) + '<div class="tagrow"><span class="tag">ENVIRONMENT  |  GS-3</span><span class="line"></span></div>'
-  + headline("Agasthyamala Reserve:", "8 facts for UPSC"),
-  flash([("Where", "Kerala + Tamil Nadu, **southern Western Ghats**"),
-         ("Area", "About **3,500 sq km**"),
-         ("UNESCO", "World Network of Biosphere Reserves, **2016**"),
-         ("Peak", "**Agasthyarkoodam**, 1,868 m"),
-         ("New checklist", "**3,261** flowering plant species"),
-         ("Endemism", "**31.2%** Indian endemics; 245 steno-endemic"),
-         ("People", "About **30,000 Kani** live in and around it"),
-         ("Case study", "**Jeevani** - India's ABS benchmark")]), fill=True), W=1000, H=1500, h1=72)
+P['pin_c'] = page(slide(top(kicker_a='MAINS', kicker_b='ANGLE', date=D) + '<div class="tagrow"><span class="tag">GS-2  |  IR</span><span class="line"></span></div>'
+  + headline("India in the Arctic:", "the Mains angle"),
+  flash([("1920", "Svalbard Treaty signed at Paris"),
+         ("2008", "Himadri station, Ny-Ålesund"),
+         ("2013", "Arctic Council Observer"),
+         ("2022", "India's Arctic Policy, six pillars"),
+         ("NCPOR, Goa", "Nodal body under Ministry of Earth Sciences"),
+         ("Climate", "Arctic warming and the monsoon"),
+         ("Routes", "Chennai–Vladivostok corridor"),
+         ("The squeeze", "Security settled outside the Arctic Council")]), fill=True), W=1000, H=1500, h1=72)
 
-# ========================== FACEBOOK CARDS 1200x675 ==========================
-P['fb_a'] = page(slide(mini_top("CURRENT AFFAIRS  |  GS-2", logo=True) + h2("Delimitation and", "the federal balance"),
-  stats([("17 Apr 2026", "131st Amendment Bill negatived"), ("1971", "Census that still fixes state shares")])), W=1200, H=675)
+# ============ FACEBOOK / LINK CARDS (1200x675) ============
+P['fb_a'] = page(slide(mini_top("CURRENT AFFAIRS  |  GS-2", logo=True) + h2("A new security order", "for the Arctic"),
+  stats([("22 Sept 2026", "US–Denmark–Greenland pact signed"), ("1951", "The agreement it amends")])), W=1200, H=675)
 
-P['fb_b'] = page(slide(mini_top("PRELIMS PRACTICE  |  GS-2", logo=True) + h2("Delimitation:", "4 statements, 2 traps"),
-  stats([("Article 82", "Readjustment after each census"), ("Article 329(a)", "Beyond judicial review")])), W=1200, H=675)
+P['fb_b'] = page(slide(mini_top("PRELIMS PRACTICE  |  GS-2", logo=True) + h2("The Arctic", "& India"),
+  stats([("1996", "Arctic Council, Ottawa Declaration"), ("1920", "India signed the Svalbard Treaty")])), W=1200, H=675)
 
-P['fb_c'] = page(slide(mini_top("CURRENT AFFAIRS  |  GS-3", logo=True) + h2("Agasthyamala:", "3,261 flowering plants"),
-  stats([("31.2%", "Taxa endemic to India"), ("3,500 sq km", "Across Kerala and Tamil Nadu")])), W=1200, H=675)
+P['fb_c'] = page(slide(mini_top("MAINS ANGLE  |  GS-2", logo=True) + h2("India and the", "militarised Arctic")
+  , stats([("2013", "Arctic Council Observer"), ("2022", "India's Arctic Policy")])), W=1200, H=675)
 
 for k, v in P.items():
-    open(os.path.join(HERE, 'html', f'{k}.html'), 'w').write(v)
-print('wrote', len(S) + len(P), 'html files')
+    open(os.path.join(HTML, f'{k}.html'), 'w').write(v)
+print('built', len(S) + len(P), 'slides')

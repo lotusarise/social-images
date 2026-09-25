@@ -43,3 +43,19 @@ https://lotusarise.com/watershed-management-upsc/
 2026-09-24 | 16:00 | instagram | current-affairs (re-queue of failed 10:00) | Delimitation & federal balance, 6-slide carousel a1-a6 | images a1-a6 @8da83f6
 2026-09-24 | 16:00 | pinterest | current-affairs (re-queue of failed 10:00) | Delimitation: 8 constitutional facts (board "UPSC Exam") | image pin_a.png @8da83f6
 2026-09-24 | 16:00 | threads | current-affairs (re-queue of failed 10:00) | 131st Amendment Bill negatived - Art 368 two-thirds arithmetic | image fb_d.png @154ddab
+https://lotusarise.com/arctic-council-upsc/
+# run 2026-09-25 15:53 IST. Topic: Arctic. Facts primary-verified against the White House
+# agreement text (published 22 Sept 2026). NOTE: Drishti dated the signing 24 Sept; the
+# agreement text says "Done at New York on the 22nd day of September, 2026" -> used 22 Sept.
+# BLOCKERS (both publishing routes exhausted, content built and queued anyway):
+#  1) METRICOOL ACCOUNT LIMIT still biting. Every 2026-09-24 post (incl. the 16:00 re-queue)
+#     ended status=ERROR "You have reached your Metricool account limit." Today's 12 posts
+#     were accepted as PENDING and will publish ONLY if the plan is upgraded before their slot.
+#  2) TYPEFULLY QUOTA EXHAUSTED: used 10 / remaining 0, resets 2026-10-01. X + LinkedIn could
+#     NOT be scheduled; all three were saved as UNSCHEDULED drafts (ids 10922139, 10922146,
+#     10922149) to be scheduled by hand once quota resets.
+# Images: 19 slides, all overflow 0, SHA-pinned at fc76cfdc3a3c129ffc6561728386bc0a3523d279,
+# verify.sh exit 0. Rendered in the cloud container (Mac routine sandbox still has no browser).
+2026-09-25 | 18:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | current-affairs | US-Denmark-Greenland Arctic security agreement, signed New York 22 Sept 2026: amends Agreement of 27 Apr 1951 + 2004 Igaliku; Pituffik expansion; new defence areas Narsarsuaq & Mestersvig; overflight/landing anywhere + undersea access; Art IX no non-NATO military presence; Art X investment screening on critical infrastructure & resource extraction; Art XI no end date + independent Greenland stays in NATO; Art XII not yet in force | https://www.whitehouse.gov/briefings-statements/2026/09/agreement-between-the-government-of-the-united-states-of-america-and-the-government-of-the-kingdom-of-denmark-together-with-the-government-of-greenland-to-amend-and-supplement-the-agreement-of-27-apri/ ; https://www.drishtiias.com/daily-updates/daily-news-analysis/us-denmark-and-greenland-sign-agreement-on-arctic-security ; https://www.insightsonindia.com/2026/09/24/upsc-current-affairs-24-september-2026/ ; https://www.aljazeera.com/news/2026/9/22/us-signs-tremendous-arctic-security-deal-with-denmark-greenland
+2026-09-25 | 20:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | prelims-mcq | Arctic governance statement MCQ, answer (C) only three: Ottawa Declaration 19 Sept 1996 + military security outside mandate; India Observer 2013 (Kiruna); TRAP = India signed Svalbard Treaty 1920 not post-2022; independent Greenland must stay in NATO | https://arctic-council.org/about/ ; https://www.pib.gov.in/PressReleasePage.aspx?PRID=2102740 ; https://ncpor.res.in/app/webroot/pages/view/340-himadri-station
+2026-09-25 | 21:45 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | mains-angle | India and the militarised Arctic: Svalbard 1920, Himadri 1 July 2008 Ny-Alesund, Observer 2013, Arctic Policy 17 Mar 2022 six pillars, NCPOR Goa; climate/monsoon, Chennai-Vladivostok corridor; security settled outside the Arctic Council where Observers have no vote | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2102740 ; https://ncpor.res.in/arctics ; https://arctic-council.org/about/observers/
