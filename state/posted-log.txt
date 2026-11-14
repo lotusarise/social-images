@@ -83,4 +83,38 @@ https://lotusarise.com/election-commission-of-india-psir-optional/
 2026-09-26 | 13:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | current-affairs | Removal of the Chief Election Commissioner: Art 324(1)/(2)/(5), Art 124(4) grounds, Judges (Inquiry) Act 1968 (100 LS / 50 RS MPs, 3-member panel), CEC-vs-ECs tenure asymmetry, Anoop Baranwal (2023) five-judge Bench, CEC & Other ECs Act 2023 selection panel (PM + Union Cabinet Minister + LoP, CJI dropped), Cabinet Secretary search committee, no CEC ever removed; trigger = SC 1:1 split 23 Sept 2026 | https://www.drishtiias.com/daily-updates/daily-news-analysis/autonomy-of-the-election-commission-of-india-eci ; https://www.insightsonindia.com/2026/09/25/upsc-current-affairs-25-september-2026/ ; https://www.barandbench.com/news/supreme-court-delivers-split-verdict-on-centres-demand-to-send-election-commissioner-appointment-case-to-larger-bench ; https://prsindia.org/billtrack/the-chief-election-commissioner-and-other-election-commissioners-appointment-conditions-of-service-and-term-of-office-bill-2023
 2026-09-26 | 16:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | prelims-mcq | ECI statement MCQ, answer (B) only two (statements 2 and 4): TRAP 1 = removal-on-recommendation applies to the ECs not the CEC; TRAP 3 = CJI is NOT on the 2023 Selection Committee (only on the Anoop Baranwal interim panel); correct = Art 324(5) proviso on service conditions, Art 324(1) covers President/VP elections | same sources as above
 2026-09-26 | 19:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | mains-angle | ECI independence as four guarantees (appointment / tenure / finance / staffing): executive holds 2 of 3 panel seats; only the CEC has Art 324(5) protection; ECI spending voted not charged on the Consolidated Fund (cf. SC, CAG, UPSC); no independent secretariat on the Art 98 / Art 146 model; Dinesh Goswami Committee 1990; Law Commission 255th Report 2015 | https://www.drishtiias.com/daily-updates/daily-news-analysis/autonomy-of-the-election-commission-of-india-eci
+https://lotusarise.com/interlinking-of-rivers-upsc/
+https://lotusarise.com/inter-state-river-water-disputes-act-1956-upsc/
+https://lotusarise.com/inter-state-disputes-and-mechanisms-of-inter-state-coordination-in-india/
+# run 2026-09-27 10:15-10:35 IST. Topic: Interlinking of Rivers (Geography + GS-2 federalism).
+# Trigger correction: Drishti ran this as its 26 Sept analysis and cited a "Southern Zonal Council at
+# Mamallapuram" with no date. Verified against PIB: it was the 31ST Southern Zonal Council, 20 AUGUST
+# 2026 at Mahabalipuram (PRID 2301113), and the Brahmaputra-Godavari-Cauvery line is from that meeting
+# (Outlook, 21 Aug 2026). All posts date it 20 Aug 2026, not late September.
+# Primary-verified: NPP 1980 = 30 links (16 Peninsular + 14 Himalayan), 30 PFRs / 24 FRs / 8 DPRs,
+# Special Committee on ILR Sept 2014 [PIB PRID 1907654]; NWDA 1982 registered society under the then
+# Ministry of Irrigation [nwda.gov.in]; Ken-Betwa Cabinet 8 Dec 2021, Rs 44,605 cr, 10.62 lakh ha,
+# 62 lakh people / 194 MCM, 103 MW hydro + 27 MW solar, 8 yrs, Daudhan Dam, MoA 22 Mar 2021, "first
+# major centrally driven river interlinking project" [PIB PRID 1779306]; Zonal Councils = five, Part III
+# SRA 1956, Union Home Minister chairs, CM Vice-Chairman by yearly rotation, advisory [mha.gov.in];
+# Entry 17 List II / Entry 56 List I verbatim; ISRWD Act 1956 time limits (1 yr / 3 yrs +2) [PRS].
+# DROPPED as conflicting/unverified: the North Eastern Council's founding year (MHA page says 1972,
+# the Act is of 1971) - NEC is not named with a year anywhere; enactment status of the ISRWD
+# (Amendment) Bill 2019 - referred to only as "on the table since it passed the Lok Sabha".
+# Images: 17 slides, all overflow 0, SHA-pinned at a7ec2b7b6e4c0282a961141fe5d1a5ee40ff0de1,
+# publish.sh ok:true, verify.sh exit 0. Rendered in the cloud container (Mac sandbox still has no
+# browser). Fixed a template bug on the way: mini_top() html-escapes its label, so "&middot;" printed
+# literally on fb_a - use a literal U+00B7 in mini_top labels, never an HTML entity.
+# BLOCKERS (both publishing routes down - 4th consecutive day):
+#  1) METRICOOL ACCOUNT LIMIT. All 12 posts from the 2026-09-26 run read status=ERROR
+#     "You have reached your Metricool account limit." Nothing has published on IG/FB/Threads/
+#     Pinterest since 2026-09-23. Today's 12 posts were accepted as PENDING and publish ONLY if the
+#     plan is upgraded before their slot. Owner action required.
+#  2) TYPEFULLY QUOTA: used 10 / remaining 0, resets 2026-10-01. X + LinkedIn could NOT be scheduled;
+#     all three saved as UNSCHEDULED drafts (ids 10947945, 10947948, 10947952).
+# Promotion: no dedicated promotion post. Educational posts carry one soft link to a free article.
+# Deliberate - with zero publishable slots, spending one on promotion was not worth it.
+2026-09-27 | 13:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | current-affairs | Interlinking of rivers: NPP 1980 30 links (16 Peninsular/14 Himalayan), NWDA 1982, 24 FRs / 8 DPRs, Special Committee Sept 2014; Ken-Betwa Rs 44,605 cr cleared 8 Dec 2021, Daudhan Dam, 10.62 lakh ha, 62 lakh people, 130 MW; Entry 17 State List vs Entry 56 Union List; Art 262 ousts all courts; Zonal Councils statutory+advisory (SRA 1956) | https://www.drishtiias.com/daily-updates/daily-news-analysis/issues-with-river-linking-projects ; https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1907654 ; https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1779306 ; https://www.pib.gov.in/PressReleasePage.aspx?PRID=2301113 ; https://www.mha.gov.in/en/page/zonal-council ; https://nwda.gov.in/content/innerpage/functions.php
+2026-09-27 | 17:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | prelims-mcq | Rivers & the Constitution, answer (B) only two (statements 1 and 3): TRAP 2 = Zonal Councils are statutory (Part III SRA 1956) not an Art 263 body (that is the Inter-State Council); TRAP 4 = Entry 17/Entry 56 reversed; correct = NWDA 1982 registered society, Art 262 can oust SC and every other court | https://www.mha.gov.in/en/page/zonal-council ; https://www.indiawaterportal.org/articles/entry-56-list-i-and-entry-17-under-list-ii-seventh-schedule-ministry-water-resources-2010 ; https://prsindia.org/billtrack/the-inter-state-river-water-disputes-amendment-bill-2019
+2026-09-27 | 20:00 | instagram,facebook,threads,pinterest (+X/LinkedIn drafts) | mains-angle | River interlinking as a federalism question: who owns it (Entry 17 vs Entry 56, Union power conditional not plenary) / who decides (Art 262 + ISRWD Act 1956 tribunals, 1 yr to constitute, 3 yrs for award +2) / who agrees (Zonal Councils + Inter-State Council advisory only; adjudication binds, consent cannot be procured); evidence = 30 links listed 1980, one cleared in 46 years; probable 15-marker | https://prsindia.org/billtrack/the-inter-state-river-water-disputes-amendment-bill-2019 ; https://www.mha.gov.in/en/page/zonal-council ; https://www.drishtiias.com/daily-updates/daily-news-analysis/issues-with-river-linking-projects
 2026-11-07 | 21:23 | x(Lotus_Arise),facebook,linkedin(both pages),linkedin-profile,threads,pinterest | product-launch | Indian Polity for UPSC 2027 Edition launch: 610 pp, 45 ch, 275 diagrams, 270 tables, Rs 349 (MRP 700), free 45-page sample. Buffer: X/FB/LinkedIn lotusarise; Zoho: LinkedIn LotusArise IAS page + Arvind KrS profile, Threads, Pinterest (UPSC Exam board). SKIPPED: Instagram (Zoho token expired), Zoho X @lotusariseias (MCP bot risk) | https://store.lotusarise.com/product/indian-polity-notes-for-upsc/
