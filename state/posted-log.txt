@@ -153,6 +153,36 @@ https://lotusarise.com/inter-state-disputes-and-mechanisms-of-inter-state-coordi
 # with the verified image URLs, suggested IST slots and the per-platform formats already checked.
 # Promotion: no dedicated promotion post; each educational post carries one soft link to a free
 # lotusarise.com article. Deliberate - with no publishable slot, a promotion post was pointless.
-2026-11-14 | NOT PUBLISHED (written only) | instagram,facebook,threads,pinterest,x,linkedin | current-affairs | NITI Aayog Impact Assessment of PLI Schemes: 14 sectors, mid-course, 50% benchmark; investment Rs 2.40 lakh cr (76%), production Rs 22.66 lakh cr (64%), employment 8.49 lakh (28% of 30.19 lakh), incentives Rs 35,354 cr (18.51% of Rs 1.91 lakh cr outlay), 58% of period elapsed; mobile exports past Rs 2 lakh cr FY2025; bulk drugs Rs 1,930 cr deficit to Rs 2,280 cr surplus; technical textiles 3.61% utilisation; ACC batteries delayed | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2335594 ; https://www.niti.gov.in/sites/default/files/2026-11/Impact-Assessment-of-PLI-Schemes.pdf ; https://www.drishtiias.com/daily-updates/daily-news-analysis/niti-aayog-report-on-impact-assessment-of-pli-schemes ; https://www.nextias.com/ca/current-affairs/13-11-2026
-2026-11-14 | NOT PUBLISHED (written only) | instagram,facebook,threads,pinterest,x,linkedin | prelims-mcq | PLI statement MCQ, answer (A) 1 and 2 only: TRAP 3 = report is NITI Aayog + IIM Ahmedabad, not Commerce Ministry + World Bank; TRAP 4 = reversed, investment 76% vs employment 28%; correct = launched 2020 across 14 sectors, incentives on incremental sales over a base year paid only after thresholds met | same sources as above
-2026-11-14 | NOT PUBLISHED (written only) | instagram,facebook,threads,pinterest,x,linkedin | current-affairs | Global Carbon Budget 2026 (21st edn, Global Carbon Project, preprint in Earth System Science Data 10 Nov 2026, released during COP31 Antalya Turkiye 9-20 Nov 2026): fossil CO2 38.2 bn t (-0.4%), land-use 5.1 bn t rising, total 43.3 bn t (42.8 in 2025), 427.7 ppm = 54% above pre-industrial, remaining 1.5C budget 150 bn t (<4 yrs); oil -1.9% gas -0.3% coal +0.6%; China -0.9% US -1.3% EU -1.5% Japan -1% India +4.4% | https://news.exeter.ac.uk/faculty-of-environment-science-and-economy/fossil-co2-emissions-decrease-in-2026/ ; https://www.nextias.com/ca/current-affairs/13-11-2026/2026-global-carbon-budget ; https://climate-diplomacy.org/events/2026-un-climate-change-conference-unfccc-cop-31
+2026-11-14 | 18:15 IST PUBLISHED | x(Lotus_Arise),facebook,linkedin(buffer page),linkedinpage(zoho),linkedinprofile(Arvind KrS),threads,pinterest | current-affairs | NITI Aayog Impact Assessment of PLI Schemes: 14 sectors, mid-course, 50% benchmark; investment Rs 2.40 lakh cr (76%), production Rs 22.66 lakh cr (64%), employment 8.49 lakh (28% of 30.19 lakh), incentives Rs 35,354 cr (18.51% of Rs 1.91 lakh cr outlay), 58% of period elapsed; mobile exports past Rs 2 lakh cr FY2025; bulk drugs Rs 1,930 cr deficit to Rs 2,280 cr surplus; technical textiles 3.61% utilisation; ACC batteries delayed | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2335594 ; https://www.niti.gov.in/sites/default/files/2026-11/Impact-Assessment-of-PLI-Schemes.pdf ; https://www.drishtiias.com/daily-updates/daily-news-analysis/niti-aayog-report-on-impact-assessment-of-pli-schemes ; https://www.nextias.com/ca/current-affairs/13-11-2026
+2026-11-14 | 18:15 IST PUBLISHED | x(Lotus_Arise),facebook,linkedin(buffer page),linkedinpage(zoho),linkedinprofile(Arvind KrS),threads,pinterest | prelims-mcq | PLI statement MCQ, answer (A) 1 and 2 only: TRAP 3 = report is NITI Aayog + IIM Ahmedabad, not Commerce Ministry + World Bank; TRAP 4 = reversed, investment 76% vs employment 28%; correct = launched 2020 across 14 sectors, incentives on incremental sales over a base year paid only after thresholds met | same sources as above
+2026-11-14 | 18:15 IST PUBLISHED | x(Lotus_Arise),facebook,linkedin(buffer page),linkedinpage(zoho),linkedinprofile(Arvind KrS),threads,pinterest | current-affairs | Global Carbon Budget 2026 (21st edn, Global Carbon Project, preprint in Earth System Science Data 10 Nov 2026, released during COP31 Antalya Turkiye 9-20 Nov 2026): fossil CO2 38.2 bn t (-0.4%), land-use 5.1 bn t rising, total 43.3 bn t (42.8 in 2025), 427.7 ppm = 54% above pre-industrial, remaining 1.5C budget 150 bn t (<4 yrs); oil -1.9% gas -0.3% coal +0.6%; China -0.9% US -1.3% EU -1.5% Japan -1% India +4.4% | https://news.exeter.ac.uk/faculty-of-environment-science-and-economy/fossil-co2-emissions-decrease-in-2026/ ; https://www.nextias.com/ca/current-affairs/13-11-2026/2026-global-carbon-budget ; https://climate-diplomacy.org/events/2026-un-climate-change-conference-unfccc-cop-31
+# CORRECTION to the blocker note above, same day 18:15-18:25 IST. The owner directed "use buffer
+# and zoho to publish", and both connectors became reachable in-session. ALL THREE POSTS ARE LIVE.
+# Metricool and Typefully were NOT used and remain disconnected - they are no longer the route.
+# ROUTING ACTUALLY USED (this is the working pattern; docs/RUNBOOK.md still describes the old one):
+#   BUFFER (org 6400ba4b475a40a11a6a1a94, limits: 3 channels / 10 scheduled posts)
+#     X        Lotus_Arise          663c59eff43b3f039c8ec595  3 posts, MCQ as a native 2-post thread
+#     Facebook LotusArise IAS page  68e7f2c3ca3a4e6b746e6082  3 posts (carousels as albums)
+#     LinkedIn lotusarise page      6a0fe4cc090476fb994865f2  3 posts (multi-image)
+#     All 9 sent via mode=shareNow, schedulingType=automatic; list_posts confirms status=sent,
+#     error=null on all 9. Images referenced directly by their SHA-pinned raw.githubusercontent URLs.
+#   ZOHO SOCIAL (portal 60059412079 LotusAriseIAS, brand 428882000000012017)
+#     linkedinpage    428882000000012423  3 posts   linkedinprofile 428882000000082003  3 posts
+#     threadsbyig     428882000000012275  3 posts   pinterest       428882000000012293  3 pins
+#     Pinterest board "UPSC Exam" = 884253776777336087 (ZOHO's id; the 706431960239283710 in the
+#     routine prompt is METRICOOL's id for the same board - do not mix them up).
+#     Media had to be re-uploaded into Zoho via uploadSocialMediaFromUrl from the raw GitHub URLs;
+#     returned ids are used as "/ViewProfilePicture.do?fileId=<id>". Width/height/size verified
+#     against the originals on every upload. validateSocialPost run before every publish, all clean.
+#   SKIPPED DELIBERATELY:
+#     Zoho facebookpage - same page as Buffer's; routing both would have double-posted it.
+#     Zoho twitter @lotusariseias - Zoho's own tool description warns MCP publishing to X is
+#     flagged as bot activity and risks account termination. Same call the owner made on 2026-11-07.
+#   FAILED:
+#     Zoho instagram 428882000000012299 - validateSocialPost returned "Token expired for this
+#     network." Instagram got nothing today. Owner action: reconnect Instagram in Zoho Social.
+# KNOWN DEFECT IN WHAT WENT OUT: on FACEBOOK the MCQ post's spoiler gap was collapsed - the five
+# blank lines either side of "Answer 👇" became one, so the answer sits right under the question.
+# LinkedIn preserved the gap; X was unaffected (separate thread posts). The FB post was already
+# sent and Buffer does not allow editing a sent post. NEXT TIME: Facebook strips repeated newlines,
+# so use a visible divider line (e.g. a row of dots or "- - -") instead of blank lines.
